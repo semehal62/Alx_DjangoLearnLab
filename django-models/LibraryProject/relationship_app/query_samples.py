@@ -1,3 +1,8 @@
-books_by_author = Book.object.get(author = author_name)
-books = Book.object.all().values()
-librarian = library.object.get(name = library_name)
+from .models import Author, Book, Library, Librarian
+
+author = Author.objects.get(name=author_name)
+books_by_author = Book.objects.get(author=author)
+
+books = Book.objects.all().values()
+
+librarian = Library.objects.get(name=library_name).librarian
