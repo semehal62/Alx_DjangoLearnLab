@@ -1,3 +1,3 @@
-books_by_author = Book.object.filter(author = "willium S. Vincent")
+books_by_author = Book.object.get(author = author_name)
 books = Book.object.all().values()
-librarian = librarian.object.filter(library = 'happy Library')
+librarian = library.object.get(name = library_name)
