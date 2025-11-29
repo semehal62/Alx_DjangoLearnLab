@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form> <h1>Librarian Dashboard</h1>
+        <p>Welcome, {{ user.username }}! You have access to the special librarian tools.</p>
+        <p>You can now perform privileged actions like managing books.</p>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+        <p><a href="{% url 'profile' %}">Back to Profile</a></p>
+    </form>
+</body>
+</html>

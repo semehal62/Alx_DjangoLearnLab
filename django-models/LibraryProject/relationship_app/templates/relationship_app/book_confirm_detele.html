@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete: {{ book.title }}</title>
+    <style>body { font-family: sans-serif; margin: 20px; }</style>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <p>Are you sure you want to delete the book "{{ book.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <p>Only users with 'can_delete_book' permission can see this.</p>
+    <p><a href="{% url 'book_detail' book.pk %}">Cancel</a></p>
+    <p><a href="{% url 'book_list' %}">Back to Books List</a></p>
+</body>
+</html>

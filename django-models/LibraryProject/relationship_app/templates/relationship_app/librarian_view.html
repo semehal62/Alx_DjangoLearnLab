@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Librarian Dashboard</title>
+    <style>body { font-family: sans-serif; margin: 20px; }</style>
+</head>
+<body>
+    <h1>Welcome, Librarian!</h1>
+    <p>This content is only visible to users with the 'Librarian' role.</p>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+</body>
+</html>

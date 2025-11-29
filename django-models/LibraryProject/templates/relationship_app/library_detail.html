@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ library.name }} Details</title>
+</head>
+<body>
+    <h1>Library: {{ library.name }}</h1>
+    <h2>Books Available:</h2>
+    {% if library.books.all %}
+        <ul>
+            {% for book in library.books.all %}
+                <li>{{ book.title }} by {{ book.author.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books available in this library.</p>
+    {% endif %}
+    <p>Librarian: {{ library.librarian.name }}</p>
+    <p><a href="{% url 'relationship_app:book_list' %}">Back to All Books</a></p>
+</body>
+</html>

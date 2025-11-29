@@ -1,0 +1,15 @@
+ls<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book: {{ book.title }}</title>
+    <style>body { font-family: sans-serif; margin: 20px; }</style>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <p>This is where you would add a form to edit details for: {{ book.title }}.</p>
+    <p>Only users with 'can_change_book' permission can see this.</p>
+    <p><a href="{% url 'book_detail' book.pk %}">Back to Book Detail</a></p>
+    <p><a href="{% url 'book_list' %}">Back to Books List</a></p>
+</body>
+</html>

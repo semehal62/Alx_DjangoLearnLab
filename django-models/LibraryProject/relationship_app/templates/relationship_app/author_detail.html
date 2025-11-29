@@ -1,0 +1,12 @@
+<h1>Author: {{ author.name }}</h1>
+<p>Bio: {{ author.bio|default:"No bio provided." }}</p>
+<h2>Books by {{ author.name }}:</h2>
+<ul>
+    {% for book in author.book_set.all %} {# Assumes default related name 'book_set' from Book model to Author #}
+        <li>{{ book.title }} (Published: {{ book.published_date|date:"Y" }})</li>
+    {% empty %}
+        <li>No books by this author.</li>
+    {% endfor %}
+</ul>
+<p><a href="{% url 'relationship_app:author_list' %}">Back to Authors</a></p>
+<p><a href="{% url 'home' %}">Back to Home</a></p>

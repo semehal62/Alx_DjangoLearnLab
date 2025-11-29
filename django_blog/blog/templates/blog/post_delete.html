@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Delete Post</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Post</h1>
+        <p>Are you sure you want to delete "{{ post.title }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn">Confirm Delete</button>
+        </form>
+        <p><a href="{% url 'post_list' %}" class="btn">Cancel</a></p>
+    </div>
+</body>
+</html>

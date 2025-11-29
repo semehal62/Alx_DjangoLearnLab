@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+        </div>
+        <p>
+            <a href="{% url 'post_update' post.id %}" class="btn">Edit</a>
+            <a href="{% url 'post_delete' post.id %}" class="btn">Delete</a>
+            <a href="{% url 'post_list' %}" class="btn">Back to Posts</a>
+        </p>
+    </div>
+</body>
+</html>

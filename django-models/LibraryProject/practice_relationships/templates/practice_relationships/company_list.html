@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company List</title>
+</head>
+<body>
+    <h1>All Companies</h1>
+    {% if companies %}
+        <ul>
+            {% for company in companies %}
+                <li>
+                    <a href="{% url 'practice_relationships:company_detail' company.pk %}">{{ company.name }}</a>
+                    (Founded: {{ company.founded_date|default:"N/A" }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No companies found.</p>
+    {% endif %}
+
+    <p><a href="{% url 'practice_relationships:hello_relationships' %}">Back to Hello Relationships</a></p>
+</body>
+</html>

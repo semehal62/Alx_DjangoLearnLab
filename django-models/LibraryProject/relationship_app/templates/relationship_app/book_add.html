@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Book</title>
+    <style>body { font-family: sans-serif; margin: 20px; }</style>
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <p>This is where you would add a form to create a new book.</p>
+    <p>Only users with 'can_add_book' permission can see this.</p>
+    <p><a href="{% url 'book_list' %}">Back to Books</a></p>
+</body>
+</html>

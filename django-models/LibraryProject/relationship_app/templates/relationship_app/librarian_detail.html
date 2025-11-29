@@ -1,0 +1,10 @@
+<h1>Librarian: {{ librarian.name }}</h1>
+<p>Employee ID: {{ librarian.employee_id }}</p>
+<p>Assigned Library: 
+    {% if librarian.library %}
+        <a href="{% url 'relationship_app:library_detail' librarian.library.pk %}">{{ librarian.library.name }}</a>
+    {% else %}
+        Not assigned to a library.
+    {% endif %}
+</p>
+<p><a href="{% url 'home' %}">Back to Home</a></p>

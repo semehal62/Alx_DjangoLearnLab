@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company.name }} Details</title>
+</head>
+<body>
+    <h1>{{ company.name }}</h1>
+    <p><strong>Founded Date:</strong> {{ company.founded_date|default:"N/A" }}</p>
+
+    <h2>Departments:</h2>
+    {% if departments %}
+        <ul>
+            {% for department in departments %}
+                <li>{{ department.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>{{ company.name }} has no departments.</p>
+    {% endif %}
+
+    <p><a href="{% url 'practice_relationships:company_list' %}">Back to Company List</a></p>
+</body>
+</html>

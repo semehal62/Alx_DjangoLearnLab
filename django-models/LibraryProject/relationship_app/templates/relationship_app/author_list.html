@@ -1,0 +1,9 @@
+<h1>All Authors</h1>
+<ul>
+    {% for author in authors %}
+        <li><a href="{% url 'relationship_app:author_detail' author.pk %}">{{ author.name }}</a></li>
+    {% empty %}
+        <li>No authors found.</li>
+    {% endfor %}
+</ul>
+<p><a href="{% url 'home' %}">Back to Home</a></p>
